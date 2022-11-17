@@ -1,35 +1,35 @@
 import mongoose from 'mongoose'
 
 const userSchema = new mongoose.Schema({
-    name:{
-        type:String,
-        required:true,
+    name: {
+        type: String,
+        required: true,
     },
     email: {
-        type:String,
-        required:true,
-        unique:true,  
+        type: String,
+        required: true,
+        unique: true,
     },
-    password:{
-        type:String,
-        required:true
+    password: {
+        type: String,
+        required: true
     },
-    role:{
-        type:String,
-        default:'User'
+    role: {
+        type: String,
+        default: 'User'
     },
-    root:{
-        type:Boolean,
-        default:false,
+    root: {
+        type: Boolean,
+        default: false,
     },
-    avatar:{
-        type:String,
-        default:''
+    avatar: {
+        type: String,
+        default: ''
     }
-},{
-    timestamps:true
+}, {
+    timestamps: true
 })
 
-let Dataset = mongoose.models.user || mongoose.model('user',userSchema)
+let Dataset = mongoose.models.user || mongoose.model('user', userSchema)
 
 export default Dataset
